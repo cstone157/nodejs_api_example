@@ -3,16 +3,18 @@
 /**
  * Module dependencies.
  */
-import app, { set } from '../app';
-var debug = require('debug')('nodejs-api-example:server');
+import { app } from '../app.js';
+//var debug = require('debug')('nodejs-api-example:server');
+//import { debug } from 'nodejs-api-example:server';
 import { createServer } from 'http';
-
+import Debug from "debug";
+const debug = Debug("myapp");
 
 /**
  * Get port from environment and store in Express.
  */
 var port = normalizePort(process.env.PORT || '3000');
-set('port', port);
+app.set('port', port);
 
 
 /**

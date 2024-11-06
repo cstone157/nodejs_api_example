@@ -8,4 +8,5 @@ const events = [
     }
 ];
 
-exports.events = events;
+//exports.events = events;
+export { events };

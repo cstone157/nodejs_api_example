@@ -1,11 +1,14 @@
-var express = require('express');
+//var express = require('express');
+import * as express from 'express';
 var router = express.Router();
 
-const { domains, events, users } = require("../common/model");
-const UserController = require("../common/controller/UserController");
+//const { domains, events, users } = require("../common/model");
+import { events } from "../common/model/index.js";
+import DomainController from "../common/controller/DomainController.js";
+import UserController from "../common/controller/UserController.js";
 
 router.get('/domain', function(req, res) {
-  res.send(domains);
+  res.send(DomainController.getAll());
 });
 
 router.get('/event', function(req, res) {
@@ -16,4 +19,5 @@ router.get('/user', function(req, res) {
   res.send(UserController.getAll());
 });
 
-module.exports = router;
+export { router };
+//module.exports = router;

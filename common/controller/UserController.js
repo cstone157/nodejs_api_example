@@ -1,4 +1,4 @@
-var { User } = require("../common/model/user");
+import User from "../model/user.js";
 
 class UserController {
     constructor() {
@@ -10,5 +10,4 @@ class UserController {
     }
 }
 
-const tmp = UserController();
-exports.UserController = tmp;
+export default new UserController();
